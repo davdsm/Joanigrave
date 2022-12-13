@@ -12,7 +12,8 @@
       class="text-left entry delay2 mb-4 text-6xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-8xl z-10 mx-60 max-sm:mx-5"
     >
       Mais de{{ " " }}<br class="sm:hidden" />
-      <mark class="px-2 mb-5 text-white bg-teal-500 rounded leading-10"
+      <mark
+        class="px-2 mb-5 text-white bg-teal-500 rounded leading-10 font-extrabold"
         >30 anos</mark
       ><br />
       na pré impressão.

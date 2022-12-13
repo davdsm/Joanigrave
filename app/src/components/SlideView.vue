@@ -11,6 +11,8 @@ export default {
         itemsToScroll: 1,
         wrapAround: true,
         transition: 10000,
+        mouseDrag: true,
+        touchDrag: true,
       },
       breakpoints: {
         300: {
