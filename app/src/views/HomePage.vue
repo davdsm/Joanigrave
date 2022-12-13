@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import BannerView from "../components/BannerView.vue";
+import AboutView from "../components/AboutView.vue";
+import SlideView from "../components/SlideView.vue";
+</script>
 <template>
-  <h1>HomePage</h1>
+  <BannerView />
+  <AboutView />
+  <SlideView />
 </template>
