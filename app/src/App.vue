@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
 import HeaderView from "./components/HeaderView.vue";
+import FooterView from "./components/FooterView.vue";
 </script>
 
 <template>
@@ -12,5 +13,7 @@ import HeaderView from "./components/HeaderView.vue";
   <main class="overflow-x-hidden">
     <RouterView />
   </main>
-  <footer>FOOTER</footer>
+  <footer class="w-full bg-slate-200 dark:bg-neutral-900">
+    <FooterView />
+  </footer>
 </template>

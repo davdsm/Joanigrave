@@ -36,7 +36,7 @@ export default {
 <template>
   <div class="container relative w-full flex justify-center">
     <nav
-      class="absolute p-3 sm:w-4/5 max-sm:w-full border-gray-200 rounded bg-gray-50 dark:bg-gray-800 dark:border-gray-700 shadow-xl"
+      class="absolute p-3 sm:w-4/5 max-sm:w-full border-gray-200 rounded bg-slate-200 dark:bg-neutral-900 dark:border-gray-700 shadow-xl"
     >
       <div
         class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5"
