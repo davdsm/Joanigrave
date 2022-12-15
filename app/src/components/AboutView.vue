@@ -1,12 +1,12 @@
 <template>
-  <div class="container mx-auto mt-60 px-8 max-sm:mt-20">
+  <div id="aboutSection" class="container mx-auto pt-60 px-8 max-sm:mt-20">
     <div id="about" class="max-w-screen-md">
       <h1
         class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
       >
         Início de atividade em
         <span
-          class="underline font-extrabold underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600"
+          class="underline font-extrabold underline-offset-3 decoration-8 decoration-sky-400 dark:decoration-sky-600"
           >Maio de 1992.</span
         >
       </h1>

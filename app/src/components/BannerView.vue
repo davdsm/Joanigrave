@@ -13,18 +13,18 @@
     >
       Mais de{{ " " }}<br class="sm:hidden" />
       <mark
-        class="px-2 mb-5 text-white bg-teal-500 rounded leading-10 font-extrabold"
+        class="px-2 mb-5 text-white bg-sky-500 rounded leading-10 font-extrabold"
         >30 anos</mark
       ><br />
       na pré impressão.
     </h1>
-    <button
-      type="button"
-      class="entry delay3 mx-60 max-sm:mx-5 bottom-40 max-sm:bottom-30 absolute z-10 flex items-center px-5 py-2.5 text-lg font-medium text-white bg-teal-500 rounded-lg hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-700"
+    <a
+      href="#aboutSection"
+      class="entry delay3 mx-60 max-sm:mx-5 bottom-40 max-sm:bottom-30 absolute z-10 flex items-center px-5 py-2.5 text-lg font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-700"
     >
       Saber Mais
       <span
-        class="inline-flex justify-center items-center ml-2 w-6 h-6 text-xs font-semibold text-blue-800 bg-teal-600 rounded-full"
+        class="inline-flex justify-center items-center ml-2 w-6 h-6 text-xs font-semibold text-blue-800 bg-sky-600 rounded-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@
           />
         </svg>
       </span>
-    </button>
+    </a>
     <div
       class="bg-gradient-to-br from-green-400 to-blue-600 w-full h-full absolute top-0 opacity-60 hover:opacity-70 ease-in duration-300 dark:bg-gradient-to-r dark:from-purple-500 dark:to-pink-500"
     ></div>
