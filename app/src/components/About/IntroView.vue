@@ -55,8 +55,8 @@
       <div
         class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
       >
-        <router-link
-          to="#"
+        <a
+          href="#about"
           class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800"
         >
           Saber Mais
@@ -74,7 +74,7 @@
               d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
             />
           </svg>
-        </router-link>
+        </a>
         <a
           target="_blank"
           href="https://www.youtube.com/@joanigrave"

@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto px-8">
+  <section id="about" class="container mx-auto px-8">
     <div
       class="gap-8 items-center px-4 mb-20 mx-auto xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
     >
