@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import BannerView from "../components/BannerView.vue";
-import AboutView from "../components/AboutView.vue";
-import SlideView from "../components/SlideView.vue";
-import CatalogView from "../components/CatalogView.vue";
+import BannerView from "../components/Home/BannerView.vue";
+import AboutView from "../components/Home/AboutView.vue";
+import SlideView from "../components/Home/SlideView.vue";
+import CatalogView from "../components/Home/CatalogView.vue";
+import GalleryViewVue from "@/components/Home/GalleryView.vue";
 </script>
 <template>
   <BannerView />
   <AboutView />
   <SlideView />
   <CatalogView />
+  <GalleryViewVue /> 
 </template>

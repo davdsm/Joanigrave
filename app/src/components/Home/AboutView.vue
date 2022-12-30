@@ -11,21 +11,33 @@
           <p
             class="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            A gravação e o design têxtil são técnicas artesanais que permitem
+            criar desenhos e textos em superfícies diversas. A gravação pode ser
+            feita em metal, madeira, vidro e até mesmo em alguns tipos de
+            tecido, enquanto o design têxtil é especialmente aplicado em tecidos
+            para criar estampas e padrões.
           </p>
           <div
             class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
           >
-            <a
-              href="catalog.pdf"
-              target="_blank"
+            <router-link
+              to="/about"
               class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-700 dark:focus:ring-primary-900"
             >
-              Download Catálogo
-            </a>
+              Saber Mais
+              <svg
+                class="ml-2 -mr-1 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </router-link>
             <a
               href="https://www.youtube.com/@joanigrave"
               target="_blank"

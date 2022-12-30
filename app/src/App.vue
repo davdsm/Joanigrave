@@ -13,7 +13,7 @@ import FooterView from "./components/FooterView.vue";
   <main class="overflow-x-hidden">
     <RouterView />
   </main>
-  <footer class="w-full bg-slate-200 dark:bg-neutral-900">
+  <footer class="w-full bg-slate-200 dark:bg-gray-900">
     <FooterView />
   </footer>
 </template>

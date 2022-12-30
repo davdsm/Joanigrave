@@ -34,20 +34,20 @@ export default {
 };
 </script>
 <template>
-  <div class="container relative w-full flex justify-center">
+  <div class="container max-sm:px-4 relative w-full flex justify-center">
     <nav
-      class="absolute p-3 sm:w-4/5 max-sm:w-full border-gray-200 rounded bg-slate-200 dark:bg-neutral-900 dark:border-gray-700 shadow-xl"
+      class="absolute p-3 sm:w-4/5 max-sm:w-full border-gray-200 rounded bg-slate-200 dark:bg-gray-900 dark:border-gray-700 shadow-xl"
     >
       <div
         class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5"
       >
-        <a href="https://flowbite.com" class="flex items-center">
+        <router-link to="/" class="flex items-center">
           <img
             src="/square_logo.png"
             class="h-10 mr-3 sm:h-16"
-            alt="Flowbite Logo"
+            alt="JoaniGrave Logo"
           />
-        </a>
+        </router-link>
         <button
           id="theme-toggle"
           type="button"
@@ -149,11 +149,19 @@ export default {
               </button>
             </li>
             <li>
-              <a
-                href="#"
+              <router-link
+                to="/"
                 class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
                 aria-current="page"
-                >Home</a
+                >Início</router-link
+              >
+            </li>
+            <li>
+              <router-link
+                to="/about"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                aria-current="page"
+                >Sobre</router-link
               >
             </li>
             <li>
@@ -163,7 +171,7 @@ export default {
                 @click="() => (services = !services)"
                 class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Company
+                Serviços
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -183,24 +191,16 @@ export default {
             </li>
             <li>
               <a
-                href="#!"
+                href="/gallery"
                 class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Marketplace
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-                >Resources</a
+                >Galeria</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="/contact"
                 class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-                >Contact</a
+                >Contactos</a
               >
             </li>
           </ul>

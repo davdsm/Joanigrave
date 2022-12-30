@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto my-32">
+  <div class="container mx-auto my-32 px-8">
     <section>
       <div class="mx-auto">
         <div class="max-w-screen-md mb-8 lg:mb-16">
@@ -9,8 +9,9 @@
             Todos os serviços de serigrafia.
           </h2>
           <p class="text-gray-500 sm:text-xl dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            A serigrafia é uma técnica de impressão que utiliza uma tela de
+            malha fina, uma estampa e uma tinta especial para transferir
+            desenhos e textos para uma superfície.
           </p>
         </div>
         <div
@@ -134,7 +135,10 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">Fotolitos</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Produção de fotolitos em filme e outros
+              A fotolitografia é uma técnica de impressão que utiliza luz para
+              criar imagens precisas em chapas de metal, geralmente de cobre ou
+              aço. Essas chapas são então usadas para imprimir em papel ou
+              outros materiais.
             </p>
           </div>
           <div>
@@ -155,7 +159,12 @@
               </svg>
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">Cores</h3>
-            <p class="text-gray-500 dark:text-gray-400">Separação de cores.</p>
+            <p class="text-gray-500 dark:text-gray-400">
+              Seperação de cores é uma técnica de impressão que divide uma imagem
+              em várias cores e cria uma estampa separada para cada cor. Isso é
+              feito para que a imagem final tenha uma qualidade de cores mais
+              precisa e detalhada quando impressa.
+            </p>
           </div>
         </div>
       </div>
