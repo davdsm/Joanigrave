@@ -1,22 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
-import AboutViewVue from "@/views/AboutView.vue";
+import AboutViewVue from "@/views/AboutPage.vue";
+import ContactsPage from "@/views/ContactsPage.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       component: HomePage,
     },
     {
       path: "/about",
-      name: "Sobre",
+      name: "About",
       component: AboutViewVue,
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+    },
+    {
+      path: "/contacts",
+      name: "Contacts",
+      component: ContactsPage,
     },
   ],
   scrollBehavior (to, from, savedPosition) {

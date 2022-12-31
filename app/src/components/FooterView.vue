@@ -20,10 +20,19 @@
             </h2>
             <ul class="text-gray-600 dark:text-gray-400">
               <li class="mb-4">
-                <router-link to="/" class="hover:underline">Página Inicial</router-link>
+                <router-link to="/" class="hover:underline"
+                  >Página Inicial</router-link
+                >
+              </li>
+              <li class="mb-4">
+                <router-link to="/about" class="hover:underline"
+                  >Sobre</router-link
+                >
               </li>
               <li>
-                <router-link to="/about" class="hover:underline">Sobre</router-link>
+                <router-link to="/contacts" class="hover:underline"
+                  >Contactos</router-link
+                >
               </li>
             </ul>
           </div>
@@ -80,7 +89,13 @@
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
           >© 2022
           <router-link to="/" class="hover:underline">JoaniGrave</router-link>.
-          Todos os direios reservados. Desenvolvido por <a class="font-bold hover:underline" target="_blank" href="https://davdsm.pt">davdsm</a>.
+          Todos os direios reservados. Desenvolvido por
+          <a
+            class="font-bold hover:underline"
+            target="_blank"
+            href="https://davdsm.pt"
+            >davdsm</a
+          >.
         </span>
         <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
           <a

@@ -108,7 +108,7 @@
             <img
               src="/logos/jn.png"
               alt="Jornal de Negócios Logo"
-              width="150px"
+              width="150"
               class="dark:grayscale-0 dark:invert"
             />
           </a>
@@ -120,7 +120,7 @@
             <img
               src="/logos/racius.svg"
               alt="Racius Logo"
-              width="150px"
+              width="150"
               class="dark:grayscale-0 dark:invert"
             />
           </a>
@@ -132,7 +132,7 @@
             <img
               src="/logos/portugalio.svg"
               alt="Racius Logo"
-              width="200px"
+              width="200"
               class="invert dark:invert-0 dark:grayscale-0"
             />
           </a>

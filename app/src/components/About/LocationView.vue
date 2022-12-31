@@ -1,34 +1,28 @@
 <template>
   <section id="about" class="container mx-auto px-8">
     <div
-      class="gap-8 items-center px-4 mb-20 mx-auto xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
+      class="entry delay2 gap-8 items-center mb-20 mx-auto xl:gap-16 md:grid md:grid-cols-2 sm:py-16"
     >
-      <img
-        class="w-full dark:hidden"
-        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
-        alt="dashboard image"
-      />
-      <img
-        class="w-full hidden dark:block"
-        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
-        alt="dashboard image"
-      />
+      <img class="w-full rounded" src="/joanigrave.jpg" alt="dashboard image" />
       <div class="mt-4 md:mt-0">
         <h2
           class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
         >
-          Let's create more tools and ideas that brings us together.
+          Joanigrave, V.N Famalicão, Portugal.
         </h2>
         <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-          Flowbite helps you connect with friends and communities of people who
-          share your interests. Connecting with your friends and family as well
-          as discovering new ones is easy with features like Groups.
+          Desde a sua fundação, temos trabalhado com dedicação e
+          profissionalismo para oferecer serviços de impressão de alta qualidade
+          a nossos clientes. Somos especialistas em serigrafia numa grande
+          variedade de materiais, incluindo tecido, papel, madeira e vidro,
+          trabalhamos com clientes de todos os tamanhos, desde pequenas empresas
+          até grandes corporações.
         </p>
-        <a
-          href="#"
+        <router-link
+          to="/contacts"
           class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
         >
-          Get started
+          Contactos
           <svg
             class="ml-2 -mr-1 w-5 h-5"
             fill="currentColor"
@@ -41,7 +35,7 @@
               clip-rule="evenodd"
             ></path>
           </svg>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
