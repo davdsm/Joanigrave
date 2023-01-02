@@ -13,14 +13,14 @@
     >
       Mais de{{ " " }}<br class="sm:hidden" />
       <mark
-        class="px-2 mb-5 text-white bg-sky-500 rounded leading-10 font-extrabold"
+        class="px-2 mb-5 text-white bg-primary-700 rounded leading-10 font-extrabold"
         >30 anos</mark
       ><br />
       na pré impressão.
     </h1>
     <a
       href="#aboutSection"
-      class="entry delay3 mx-60 max-sm:mx-5 bottom-40 max-sm:bottom-30 absolute z-10 flex items-center px-5 py-2.5 text-lg font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-700"
+      class="entry delay3 mx-60 max-sm:mx-5 bottom-40 max-sm:bottom-30 absolute z-10 flex items-center px-5 py-2.5 text-lg font-medium text-white bg-primary-700 rounded-lg hover:bg-sky-700 dark:bg-primary-500 dark:hover:bg-primary-600"
     >
       Saber Mais
       <span

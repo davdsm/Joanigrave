@@ -18,8 +18,80 @@
         conosco agora mesmo!
       </p>
     </div>
-    <div class="entry delay1 sm:flex gap-4 pt-36 max-sm:pt-20">
-      <div class="sm:w-2/4"></div>
+    <div class="entry delay1 sm:flex gap-12 pt-36 max-sm:pt-20">
+      <div class="sm:w-2/4 flex flex-wrap pb-32">
+        <div
+          class="sm:w-2/4 max-sm:w-full max-sm:pb-4 text-center dark:text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="mx-auto w-12 h-12 pb-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+            />
+          </svg>
+          <a class="font-bold text-lg" href="mailto:geral@joanigrave.com"
+            >geral@joanigrave.com</a
+          >
+        </div>
+        <div
+          class="sm:w-2/4 max-sm:w-full max-sm:pb-4 text-center dark:text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="mx-auto w-12 h-12 pb-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+            />
+          </svg>
+          <a class="font-bold text-lg" href="tel:+351 ---------"
+            >+351 ---------<br /><b
+              ><span>Chamada para rede móvel nacional.</span></b
+            ></a
+          >
+        </div>
+        <div class="w-full text-center dark:text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="mx-auto w-12 h-12 pb-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+            />
+          </svg>
+          <a
+            class="font-bold text-lg"
+            href="https://www.google.com/maps/place/Joanitel/@41.4451561,-8.4162531,17z/data=!3m1!4b1!4m5!3m4!1s0xd24f75c89e7d9b1:0xc167b6b0e38ca67d!8m2!3d41.4451917!4d-8.414066"
+            >Rua X de X, número X, Joane, <br />
+            Vila Nova de Famalicão, Portugal</a
+          >
+        </div>
+      </div>
       <div class="sm:w-2/4">
         <form action="#" class="space-y-8">
           <div>
@@ -77,6 +149,32 @@
               placeholder="Deixe aqui a sua mensagem."
             ></textarea>
           </div>
+
+          <div class="flex items-center">
+            <input
+              id="link-checkbox"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <label
+              for="link-checkbox"
+              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Eu concordo com os
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-500 hover:underline"
+                >termos e condições</a
+              >
+              e
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-500 hover:underline"
+                >política de privacidade</a
+              >.</label
+            >
+          </div>
+
           <button
             type="submit"
             class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"

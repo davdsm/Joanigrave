@@ -22,7 +22,7 @@
           >
             <router-link
               to="/about"
-              class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-700 dark:focus:ring-primary-900"
+              class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-sky-700 dark:focus:ring-primary-900"
             >
               Saber Mais
               <svg
