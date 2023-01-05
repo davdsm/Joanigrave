@@ -85,6 +85,7 @@
             />
           </svg>
           <a
+            target="_blank"
             class="font-bold text-lg"
             href="https://www.google.com/maps/place/Joanitel/@41.4451561,-8.4162531,17z/data=!3m1!4b1!4m5!3m4!1s0xd24f75c89e7d9b1:0xc167b6b0e38ca67d!8m2!3d41.4451917!4d-8.414066"
             >Rua X de X, número X, Joane, <br />
