@@ -1,3 +1,17 @@
+<script lang="ts">
+import { getServices } from '@/redux/calls';
+
+export default {
+  data() {
+    return {
+      services: <any>false,
+    };
+  },
+  async beforeMount() {
+    this.services = await getServices()
+  },
+};
+</script>
 <template>
   <div class="container mx-auto my-32 px-8">
     <section>
