@@ -5,7 +5,8 @@ let login = <boolean>false;
 let services = <Array<object> | boolean>false;
 let gallery = <Array<object> | boolean>false;
 let slide = <Array<object> | boolean>false;
-const pb = <PocketBase>new PocketBase("http://0.0.0.0:8090");
+const pb = <PocketBase>new PocketBase("http://192.168.1.94:8090");
+pb.autoCancellation(false);
 
 const doLogin = async () => {
   const auth = await pb
@@ -42,11 +43,10 @@ export const getServices = async () => {
   const records = <Array<object>>(
     await pb
       .collection("joanigrave_services")
-      .getFullList(200 /* batch size */, {
+      .getFullList(800 /* batch size */, {
         sort: "-created",
       })
   );
-  console.log(records)
   services = <Array<object>>records;
   pb.authStore.clear();
   return <Array<object>>records;
@@ -65,7 +65,6 @@ export const getGallery = async () => {
       })
   );
   gallery = <Array<object>>records;
-  pb.authStore.clear();
   return <Array<object>>records;
 };
 
@@ -75,13 +74,10 @@ export const getSlide = async () => {
     return <Array<object>>slide;
   }
   const records = <Array<object>>(
-    await pb
-      .collection("joanigrave_gallery")
-      .getFullList(200 /* batch size */, {
-        sort: "-created",
-      })
+    await pb.collection("joanigrave_slide").getFullList(200 /* batch size */, {
+      sort: "-created",
+    })
   );
   slide = <Array<object>>records;
-  pb.authStore.clear();
   return <Array<object>>records;
 };

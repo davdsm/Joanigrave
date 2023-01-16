@@ -1,5 +1,5 @@
 <template>
-  <div id="aboutSection" class="container mx-auto pt-60 px-8 max-sm:mt-20">
+  <div id="aboutSection" class="container mx-auto pt-60 px-8 max-sm:pt-32">
     <section class="">
       <div class="mx-auto">
         <div class="max-w-screen-md">

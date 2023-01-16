@@ -1,14 +1,17 @@
 <script lang="ts">
+import { getServices } from "@/redux/calls";
+
 export default {
   data() {
     return {
       services: <boolean>false,
+      list: <any>[],
       hamburger: <boolean>false,
       dark: <boolean>false,
     };
   },
   methods: {
-    async handleDark() {
+    handleDark(): void {
       if (document.documentElement.classList.contains("dark")) {
         localStorage.theme = "light";
       } else {
@@ -17,6 +20,9 @@ export default {
       this.dark = localStorage.theme === "dark";
       document.documentElement.classList.toggle("dark");
     },
+    handleClick(e: any): void {
+      this.services = false;
+    }
   },
   async beforeMount() {
     if (
@@ -30,6 +36,8 @@ export default {
       this.dark = false;
       document.documentElement.classList.remove("dark");
     }
+
+    this.list = await getServices();
   },
 };
 </script>
@@ -209,88 +217,20 @@ export default {
           @click="() => (services = false)"
         ></div>
         <div
-          class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-6 z-10"
+          class="max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white md:px-6 z-10"
         >
-          <ul>
-            <li>
-              <a
-                href="#"
+          <ul class="grid sm:grid-cols-2">
+            <li v-for="service in list" :key="service.id">
+              <router-link
+                @click="(e) => handleClick(e)"
+                to="/services"
                 class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <div class="font-semibold">Online Stores</div>
+                ><div class="font-semibold">{{ service.name }}</div>
                 <span
-                  class="text-sm font-light text-gray-500 dark:text-gray-400"
-                  >Connect with third-party tools that you're already
-                  using.</span
-                >
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                  class="text-sm font-light text-gray-500 dark:text-gray-400 ellipsis"
+                  >{{ service.description }}</span
+                ></router-link
               >
-                <div class="font-semibold">Segmentation</div>
-                <span
-                  class="text-sm font-light text-gray-500 dark:text-gray-400"
-                  >Connect with third-party tools that you're already
-                  using.</span
-                >
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <div class="font-semibold">Marketing CRM</div>
-                <span
-                  class="text-sm font-light text-gray-500 dark:text-gray-400"
-                  >Connect with third-party tools that you're already
-                  using.</span
-                >
-              </a>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <a
-                href="#"
-                class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <div class="font-semibold">Online Stores</div>
-                <span
-                  class="text-sm font-light text-gray-500 dark:text-gray-400"
-                  >Connect with third-party tools that you're already
-                  using.</span
-                >
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <div class="font-semibold">Segmentation</div>
-                <span
-                  class="text-sm font-light text-gray-500 dark:text-gray-400"
-                  >Connect with third-party tools that you're already
-                  using.</span
-                >
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <div class="font-semibold">Marketing CRM</div>
-                <span
-                  class="text-sm font-light text-gray-500 dark:text-gray-400"
-                  >Connect with third-party tools that you're already
-                  using.</span
-                >
-              </a>
             </li>
           </ul>
         </div>

@@ -1,6 +1,7 @@
 <script lang="ts">
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { getSlide } from '@/redux/calls';
 
 export default {
   setup() {
@@ -28,16 +29,12 @@ export default {
   },
   data() {
     return {
-      images: <Array<string>>[
-        "/slide/1.jpg",
-        "/slide/2.jpg",
-        "/slide/3.jpg",
-        "/slide/4.jpg",
-        "/slide/5.jpg",
-        "/slide/6.jpg",
-        "/slide/7.jpg",
-      ],
+      images: <Array<any>>[],
+      path: "http://192.168.1.94:8090/api/files/"
     };
+  },
+  async beforeMount() {
+    this.images = await getSlide()
   },
   components: {
     Carousel,
@@ -52,6 +49,7 @@ export default {
     :settings="settings"
     class="mt-40 max-sm:mt-20"
     :breakpoints="breakpoints"
+    v-if="images.length > 0" 
   >
     <slide
       v-for="(image, index) in images"
@@ -61,7 +59,7 @@ export default {
       <div class="w-full h-full">
         <img
           class="w-full h-full object-cover"
-          :src="image"
+          :src="path + image.collectionId + '/' + image.id + '/' + image.image"
           alt="JoaniGrave Photos"
         />
       </div>
