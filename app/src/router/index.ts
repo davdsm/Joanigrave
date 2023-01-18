@@ -3,6 +3,9 @@ import HomePage from "../views/HomePage.vue";
 import AboutViewVue from "@/views/AboutPage.vue";
 import ContactsPage from "@/views/ContactsPage.vue"
 import ServicesPageVue from "@/views/ServicesPage.vue";
+import PrivacyView from "@/views/PrivacyView.vue";
+import TermsView from "@/views/TermsView.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +24,16 @@ const router = createRouter({
       path: "/services",
       name: "Services",
       component: ServicesPageVue,
+    },
+    {
+      path: "/privacy",
+      name: "Privacy",
+      component: PrivacyView,
+    },
+    {
+      path: "/terms",
+      name: "Terms",
+      component: TermsView,
     },
     {
       path: "/contacts",

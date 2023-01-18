@@ -69,13 +69,13 @@
             </h2>
             <ul class="text-gray-600 dark:text-gray-400">
               <li class="mb-4">
-                <a target="_blank" href="#" class="hover:underline"
-                  >Política de Privacidade</a
+                <router-link to="/privacy" class="hover:underline"
+                  >Política de Privacidade</router-link
                 >
               </li>
               <li>
-                <a target="_blank" href="#" class="hover:underline"
-                  >Termos e Condições</a
+                <router-link to="/terms" class="hover:underline"
+                  >Termos e Condições</router-link
                 >
               </li>
             </ul>
