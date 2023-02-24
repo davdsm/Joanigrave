@@ -1,17 +1,22 @@
 import PocketBase from "pocketbase";
 import ls from "localstorage-slim";
+import * as env from "../env.json";
 
 let login = <boolean>false;
 let services = <Array<object> | boolean>false;
 let gallery = <Array<object> | boolean>false;
 let slide = <Array<object> | boolean>false;
-const pb = <PocketBase>new PocketBase("http://192.168.1.94:8090");
+const pb = <PocketBase>new PocketBase(env.api.address);
 pb.autoCancellation(false);
+
+const myHeaders = new Headers();
+myHeaders.append(env.api.header, env.api.key);
+myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
 const doLogin = async () => {
   const auth = await pb
     .collection("users")
-    .authWithPassword("joanigrave", "PcoetbaS#2k23_#!");
+    .authWithPassword(env.pocketBase.username, env.pocketBase.password);
   ls.set("joanigrave-token", auth.record.email, { encrypt: true });
   return true;
 };
@@ -80,4 +85,30 @@ export const getSlide = async () => {
   );
   slide = <Array<object>>records;
   return <Array<object>>records;
+};
+
+export const sendEmail = async (
+  name: string,
+  email: string,
+  subject: string,
+  message: string
+): Promise<number> => {
+  await handleLogin();
+  const urlencoded = new URLSearchParams();
+  urlencoded.append("name", name);
+  urlencoded.append("email", email);
+  urlencoded.append("subject", subject);
+  urlencoded.append("message", message);
+
+  const requestOptions: RequestInit = {
+    method: "POST",
+    headers: myHeaders,
+    body: urlencoded,
+    redirect: "follow",
+  };
+
+  return fetch(`${env.api.email}/send`, requestOptions)
+    .then((response) => response.text())
+    .then(() => 200)
+    .catch(() => 403);
 };

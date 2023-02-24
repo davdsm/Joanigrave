@@ -1,3 +1,48 @@
+<script lang="ts">
+import { sendEmail } from "@/redux/calls";
+
+export default {
+  data() {
+    return {
+      success: <string>"",
+      error: <string>"",
+      name: <string>"",
+      email: <string>"",
+      subject: <string>"",
+      message: <string>"",
+    };
+  },
+  methods: {
+    async send(e): Promise<void> {
+      e.preventDefault();
+      this.success = "";
+      this.error = "";
+      if (
+        this.name.length > 1 &&
+        this.email.length > 1 &&
+        this.message.length > 1
+      ) {
+        const emailSended: number = await sendEmail(
+          this.name,
+          this.email,
+          this.subject,
+          this.message
+        );
+        if (emailSended === 200) {
+          this.success = "Mensagem Enviada!";
+          this.error = "";
+        } else {
+          this.success = "";
+          this.error = "Erro interno, contactar admin.";
+        }
+      } else {
+        this.success = "";
+        this.error = "Os campos são obrigatórios.";
+      }
+    },
+  },
+};
+</script>
 <template>
   <section class="container px-8 mx-auto pt-72 pb-40 max-sm:pt-48">
     <div class="entry w-2/4 text-center mx-auto max-sm:w-full">
@@ -58,8 +103,8 @@
               d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
             />
           </svg>
-          <a class="font-bold text-lg" href="tel:+351 ---------"
-            >+351 ---------<br /><b
+          <a class="font-bold text-lg" href="tel:+351 931 611 755"
+            >+351 931 611 755<br /><b
               ><span>Chamada para rede móvel nacional.</span></b
             ></a
           >
@@ -88,13 +133,13 @@
             target="_blank"
             class="font-bold text-lg"
             href="https://www.google.com/maps/place/Joanitel/@41.4451561,-8.4162531,17z/data=!3m1!4b1!4m5!3m4!1s0xd24f75c89e7d9b1:0xc167b6b0e38ca67d!8m2!3d41.4451917!4d-8.414066"
-            >Rua X de X, número X, Joane, <br />
-            Vila Nova de Famalicão, Portugal</a
+            >Avenida Dr. Mário Soares, Nº 1900 <br />
+            4770-258 Joane, Vila Nova de Famalicão</a
           >
         </div>
       </div>
       <div class="sm:w-2/4">
-        <form action="#" class="space-y-8">
+        <form @submit="send" class="space-y-8">
           <div>
             <label
               for="name"
@@ -104,6 +149,7 @@
             <input
               type="text"
               id="name"
+              v-model="name"
               class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
               placeholder="Nome"
               required
@@ -118,6 +164,7 @@
             <input
               type="email"
               id="email"
+              v-model="email"
               class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
               placeholder="email@email.com"
               required
@@ -134,6 +181,7 @@
               id="subject"
               class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
               placeholder="Em que podemos ajudar?"
+              v-model="subject"
               required
             />
           </div>
@@ -146,6 +194,7 @@
             <textarea
               id="message"
               rows="6"
+              v-model="message"
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               placeholder="Deixe aqui a sua mensagem."
             ></textarea>
@@ -156,6 +205,7 @@
               id="link-checkbox"
               type="checkbox"
               value=""
+              required
               class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -182,6 +232,21 @@
           >
             Enviar Mensagem
           </button>
+          <div
+            v-if="error.length > 0"
+            class="w-auto p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-900 dark:text-red-400"
+            role="alert"
+          >
+            <span class="font-medium">Erro!</span> {{ error }}
+          </div>
+          <span></span>
+          <div
+            v-if="success.length > 0"
+            class="p-4 mb-4 w-auto text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-900 dark:text-green-400"
+            role="alert"
+          >
+            <span class="font-medium">Sucesso!</span> {{ success }}
+          </div>
         </form>
       </div>
     </div>

@@ -5,7 +5,7 @@ export default {
   data() {
     return {
       images: <any>false,
-      path: "http://192.168.1.94:8090/api/files/",
+      path: "http://192.168.1.106:8090/api/files/",
     };
   },
   async beforeMount() {

@@ -1,6 +1,23 @@
 version: "3.7"
 
 services:
+  send_mail:
+    build:
+      context: ./sendMail
+      dockerfile: Dockerfile
+    container_name: SendMail
+    command: node index.js
+    ports:
+      - "8030:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./sendMail:/usr/src/app/sendMail
+      - /usr/src/app/sendMail/node_modules
+
+    restart: always
+
+
   joanigrave_app:
     build:
       context: ./app
@@ -24,5 +41,5 @@ services:
     ports:
       - "8090:8090"
     volumes:
-      - /api:/api
+      - ./api:/api
       - ./api/data:/pb_data
