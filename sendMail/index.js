@@ -21,6 +21,8 @@ var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 var sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail(); // SendSmtpEmail | Values to send a transactional email
 
 const port = 3000
+app.use(express.json())
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -52,6 +54,38 @@ app.post('/send', (req, res) => {
   });
 
   res.sendStatus(200)
+
+  } else {
+    res.sendStatus(403)
+  }
+})
+
+app.post('/sendMail', (req, res) => {
+  const apiKey = req.header(process.env.API_HEADER);
+  const data = req.body
+  if (apiKey === process.env.API_KEY) {
+    sendSmtpEmail = {
+      sender: {
+        name: data.sender,
+        email: "geral@davdsm.pt"
+      },
+      to: [
+        {
+          email: data.receiver.email,
+          name: data.receiver.name
+        }
+      ],
+      subject: data.subject,
+      htmlContent: data.message
+    };
+
+    apiInstance.sendTransacEmail(sendSmtpEmail).then(function (data) {
+      console.log('API called successfully. Returned data: ' + JSON.stringify(data));
+    }, function (error) {
+      console.error(error);
+    });
+
+    res.sendStatus(200)
 
   } else {
     res.sendStatus(403)
