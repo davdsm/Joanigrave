@@ -1,0 +1,52 @@
+
+services:
+  send_mail:
+    build:
+      context: ./sendMail
+      dockerfile: Dockerfile
+    container_name: SendMail
+    command: node index.js
+    # ports:
+    #   - "8030:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./sendMail:/usr/src/app/sendMail
+      - /usr/src/app/sendMail/node_modules
+    restart: always
+    networks:
+      - proxy
+
+
+  joanigrave_app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    # ports:
+    #   - "8080:8080"
+    container_name: joanigrave_app
+    command: npm run dev -- --port 8080 --host
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./app:/usr/src/app/Joanigrave
+      - /usr/src/app/Joanigrave/node_modules
+    restart: always
+    networks:
+      - proxy
+
+  joanigrave_api:
+    image: ghcr.io/muchobien/pocketbase:latest
+    container_name: joanigrave_api
+    restart: unless-stopped
+    # ports:
+    #   - "8091:8090"
+    volumes:
+      - ./api:/api
+      - ./api/data:/pb_data
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

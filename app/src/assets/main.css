@@ -1,0 +1,62 @@
+@import "./base.css";
+
+.subtitle {
+  color: var(--main-subtitle);
+}
+
+.title {
+  color: var(--main-title);
+}
+
+.yellow {
+  background: var(--main-yellow);
+  color: #fff;
+}
+
+.shadow-davdsm {
+  box-shadow: 89px 103px 67px rgba(0, 0, 0, 0.03),
+    32.5px 37.6px 21.4px rgba(0, 0, 0, 0.02),
+    15.8px 18.3px 9px rgba(0, 0, 0, 0.017),
+    7.7px 8.9px 3.6px rgba(0, 0, 0, 0.013),
+    3.1px 3.5px 1.1px rgba(0, 0, 0, 0.009);
+}
+
+.entry {
+  opacity: 0;
+  transform: translateY(30px);
+  /* transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+  animation-name: entry;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.delay1 {
+  animation-delay: 0.2s;
+}
+.delay2 {
+  animation-delay: 0.4s;
+}
+.delay3 {
+  animation-delay: 0.6s;
+}
+table tr:nth-child(even) {
+  background-color: rgb(249 250 251);
+}
+.ellipsis {
+  display: -webkit-box;
+  max-width: 200px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@keyframes entry {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
