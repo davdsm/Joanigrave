@@ -1,22 +1,27 @@
 import PocketBase from "pocketbase";
 import ls from "localstorage-slim";
-import * as env from "../env.json";
+
+const pbUrl = import.meta.env.VITE_PB_URL;
+const pbUser = import.meta.env.VITE_PB_USER;
+const pbPassword = import.meta.env.VITE_PB_PW;
+const apiHeader = import.meta.env.VITE_API_HEADER;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 let login = <boolean>false;
 let services = <Array<object> | boolean>false;
 let gallery = <Array<object> | boolean>false;
 let slide = <Array<object> | boolean>false;
-const pb = <PocketBase>new PocketBase(env.api.address);
+const pb = <PocketBase>new PocketBase(pbUrl);
 pb.autoCancellation(false);
 
 const myHeaders = new Headers();
-myHeaders.append(env.api.header, env.api.key);
+myHeaders.append(apiHeader, apiKey);
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
 const doLogin = async () => {
   const auth = await pb
     .collection("users")
-    .authWithPassword(env.pocketBase.username, env.pocketBase.password);
+    .authWithPassword(pbUser, pbPassword);
   ls.set("joanigrave-token", auth.record.email, { encrypt: true });
   return true;
 };
@@ -93,33 +98,26 @@ export const sendEmail = async (
   subject: string,
   message: string
 ): Promise<number> => {
-
-  const urlencoded = new URLSearchParams();
-  urlencoded.append("name", name);
-  urlencoded.append("email", email);
-  urlencoded.append("subject", subject);
-  urlencoded.append("message", message);
-
-
-request({
-    url: "http://api.davdsm.pt/sendMail",
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-      "davdsmKey": 'd41d8cd98f00b204e9800998ecf8427e'  // <--Very important!!!
-    },
-    body: JSON.stringify({
-      sender: "website@joanigrave.pt",
-      receiver: {
-        email: "geral@davdsm.pt",
-        name: "David"
+  try {
+    const response = await fetch("https://api.davdsm.pt/sendMail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        [apiHeader]: apiKey,
       },
-      subject: `✈️ ($ Nova Mensagem em JoaniGrave )`,
-      message: 'isto é um teste'
-})
-  }, function (error, response, body) {
-    console.log("✈️ Email Enviado? - ", response.body);
-    console.log("---------------------------------------------------");
-    console.log("");
-  }).then((response) => response.text()).then(() => 200).catch(() => 403);
+      body: JSON.stringify({
+        sender: "JoaniGrave",
+        receiver: {
+          email: "geral@joanigrave.pt",
+          name: "JoaniGrave",
+        },
+        subject: `Nova mensagem de ${name} — ${subject}`,
+        message: `${message}\n\nDe: ${name} <${email}>`,
+      }),
+    });
+
+    return response.ok ? 200 : 403;
+  } catch {
+    return 403;
+  }
 };
